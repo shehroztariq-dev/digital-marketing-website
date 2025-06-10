@@ -25,6 +25,7 @@ const DropDownNav: React.FC<DropDownNavProps> = ({ onClose }) => {
             <Link
               key={item.id}
               href={item.link}
+              onClick={onClose}
               className="text-slate-900 text-2xl">
               {item.linkTitle}
             </Link>

@@ -43,10 +43,9 @@ export default function SliderMain() {
       <Slider {...settings}>
         {sliderContent.map((item) => {
           return (
-            <div className="rounded-md px-2 md:p-10">
+            <div key={item.id} className="rounded-md px-2 md:p-10">
               <Image
                 priority
-                key={item.id}
                 src={item.imageLink}
                 alt="logo"
                 width={500}
