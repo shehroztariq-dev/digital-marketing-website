@@ -5,13 +5,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -25,7 +25,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
-import { PiCheckLight, PiSmiley } from "react-icons/pi";
+import { PiCheckLight } from "react-icons/pi";
+// import { PiSmiley,  } from "react-icons/pi";
 
 const FormSchema = z.object({
   first_name: z.string().min(2, "First name must be at least 2 characters"),
@@ -33,19 +34,19 @@ const FormSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   job_title: z.string().min(2, "Job title must be at least 2 characters"),
   company_name: z.string().min(2, "Company name must be at least 2 characters"),
-  help: z.enum([
-    "Evaluate Bird for my company",
-    "Learn More",
-    "Get a Quote",
-    "Other",
-  ]),
-  services: z.enum([
-    "Mobile App Development",
-    "Social Media Marketing",
-    "UI/UX Design",
-    "Branding",
-    "Website Development",
-  ]),
+  // help: z.enum([
+  //   "Evaluate Bird for my company",
+  //   "Learn More",
+  //   "Get a Quote",
+  //   "Other",
+  // ]),
+  // services: z.enum([
+  //   "Mobile App Development",
+  //   "Social Media Marketing",
+  //   "UI/UX Design",
+  //   "Branding",
+  //   "Website Development",
+  // ]),
   info: z.string().max(500, "Message cannot exceed 500 characters"),
   terms: z.boolean().refine((val) => val, "You must accept the terms"),
 });
@@ -64,8 +65,8 @@ export function ContactForm() {
       email: "",
       job_title: "",
       company_name: "",
-      help: "Learn More",
-      services: "Mobile App Development",
+      // help: "Learn More",
+      // services: "Social Media Marketing",
       info: "",
       terms: false,
     },
@@ -116,9 +117,9 @@ export function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="mx-auto w-full max-w-2xl space-y-6 rounded-xl border bg-white p-8 shadow-sm">
+        className="mx-auto w-full max-w-2xl space-y-6 rounded-xl border  p-8 shadow-sm">
         <div className="space-y-2">
-          <h2 className="text-2xl font-semibold text-gray-900">
+          <h2 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
             Contact Our Team
           </h2>
           <p className="text-gray-600">
@@ -133,12 +134,14 @@ export function ContactForm() {
             name="first_name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-gray-700">First name *</FormLabel>
+                <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                  First name *
+                </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
-                    placeholder="John"
-                    className="focus:ring-2 focus:ring-blue-500"
+                    placeholder="Shehroz"
+                    className="focus:ring-2 focus:ring-blue-500 text-white"
                   />
                 </FormControl>
                 <FormMessage className="text-xs text-red-600" />
@@ -151,12 +154,14 @@ export function ContactForm() {
             name="last_name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-gray-700">Last name *</FormLabel>
-                <FormControl>
+                <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                  Last name *
+                </FormLabel>
+                <FormControl className="text-slate-400">
                   <Input
                     {...field}
-                    placeholder="Doe"
-                    className="focus:ring-2 focus:ring-blue-500"
+                    placeholder="Tariq"
+                    className="focus:ring-2 focus:ring-blue-500 text-white"
                   />
                 </FormControl>
                 <FormMessage className="text-xs text-red-600" />
@@ -170,13 +175,15 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-gray-700">Email *</FormLabel>
+              <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                Email *
+              </FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   type="email"
-                  placeholder="john.doe@company.com"
-                  className="focus:ring-2 focus:ring-blue-500"
+                  placeholder="shehroztariq.dev@gmail.com"
+                  className="focus:ring-2 focus:ring-blue-500 text-white"
                 />
               </FormControl>
               <FormMessage className="text-xs text-red-600" />
@@ -190,12 +197,14 @@ export function ContactForm() {
             name="job_title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-gray-700">Job title *</FormLabel>
+                <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                  Job title *
+                </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     placeholder="e.g. Marketing Director"
-                    className="focus:ring-2 focus:ring-blue-500"
+                    className="focus:ring-2 focus:ring-blue-500 text-white"
                   />
                 </FormControl>
                 <FormMessage className="text-xs text-red-600" />
@@ -208,12 +217,14 @@ export function ContactForm() {
             name="company_name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-gray-700">Company name *</FormLabel>
+                <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 ">
+                  Company name *
+                </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     placeholder="Your company"
-                    className="focus:ring-2 focus:ring-blue-500"
+                    className="focus:ring-2 focus:ring-blue-500 text-white"
                   />
                 </FormControl>
                 <FormMessage className="text-xs text-red-600" />
@@ -222,86 +233,89 @@ export function ContactForm() {
           />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <FormField
-            control={form.control}
-            name="services"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-700">
-                  Services you're interested in *
-                </FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="focus:ring-2 focus:ring-blue-500">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="Mobile App Development">
-                      Mobile App Development
-                    </SelectItem>
-                    <SelectItem value="Social Media Marketing">
-                      Social Media Marketing
-                    </SelectItem>
-                    <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
-                    <SelectItem value="Branding">Branding</SelectItem>
-                    <SelectItem value="Website Development">
-                      Website Development
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage className="text-xs text-red-600" />
-              </FormItem>
-            )}
-          />
+        {/* <div className="grid gap-6 md:grid-cols-2">
+            <FormField
+              control={form.control}
+              name="services"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                    Services you're interested in *
+                  </FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger className="focus:ring-2 focus:ring-blue-500">
+                        <SelectValue
+                          placeholder="Select a service"
+                          className="text-white"
+                        />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="Mobile App Development">
+                        Mobile App Development
+                      </SelectItem>
+                      <SelectItem value="Social Media Marketing">
+                        Social Media Marketing
+                      </SelectItem>
+                      <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                      <SelectItem value="Branding">Branding</SelectItem>
+                      <SelectItem value="Website Development">
+                        Website Development
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage className="text-xs text-red-600" />
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="help"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-700">
-                  How can we help? *
-                </FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="focus:ring-2 focus:ring-blue-500">
-                      <SelectValue placeholder="Select an option" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="Evaluate Bird for my company">
-                      Evaluate Bird for my company
-                    </SelectItem>
-                    <SelectItem value="Learn More">Learn More</SelectItem>
-                    <SelectItem value="Get a Quote">Get a Quote</SelectItem>
-                    <SelectItem value="Other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage className="text-xs text-red-600" />
-              </FormItem>
-            )}
-          />
-        </div>
+            <FormField
+              control={form.control}
+              name="help"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                    How can we help? *
+                  </FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger className="focus:ring-2 focus:ring-blue-500">
+                        <SelectValue placeholder="Select an option" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="Evaluate Bird for my company">
+                        Evaluate Bird for my company
+                      </SelectItem>
+                      <SelectItem value="Learn More">Learn More</SelectItem>
+                      <SelectItem value="Get a Quote">Get a Quote</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage className="text-xs text-red-600" />
+                </FormItem>
+              )}
+            />
+          </div> */}
 
         <FormField
           control={form.control}
           name="info"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-gray-700">
+              <FormLabel className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
                 Additional information
               </FormLabel>
               <FormControl>
                 <Textarea
                   {...field}
                   placeholder="Tell us more about your project or inquiry"
-                  className="min-h-[120px] focus:ring-2 focus:ring-blue-500"
+                  className="min-h-[120px] focus:ring-2 focus:ring-blue-500 text-white"
                 />
               </FormControl>
               <FormDescription className="text-xs text-gray-500">
