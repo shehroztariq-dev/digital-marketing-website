@@ -96,15 +96,15 @@ export default function Navbar() {
           <button
             key={id}
             onClick={(e) => handleNavigation(e, targetId)}
-            className="cursor-pointer font-bold text-base text-slate-300 hover:text-white transition-colors"
+            className="cursor-pointer font-bold text-base  hover:text-white transition-colors text-slate-300 bg-clip-text bg-gradient-to-b from-neutral-600 to-neutral-100 bg-opacity-50"
             aria-label={`Scroll to ${title} section`}>
-            {title}
+            <span className="text-transparent">{title}</span>
           </button>
         ))}
         <Link
           href="/pricing"
-          className="font-bold text-base text-slate-300 hover:text-white transition-colors">
-          Pricing
+          className="font-bold text-base  hover:text-white transition-colors text-slate-300 bg-clip-text bg-gradient-to-b from-neutral-600 to-neutral-100 bg-opacity-50">
+          <span className="text-transparent">Pricing</span>
         </Link>
       </nav>
 
@@ -135,7 +135,7 @@ export default function Navbar() {
       <div className="hidden md:flex">
         <Link
           href="/contact"
-          className="inline-flex h-12 items-center justify-center rounded-md border border-neutral-800 bg-neutral-900 px-6 font-medium text-neutral-200 shadow-md hover:bg-neutral-800 transition-colors"
+          className="inline-flex h-12 px-13 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-slate-400 transition-colors"
           aria-label="Contact us">
           Contact
         </Link>
