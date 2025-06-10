@@ -11,7 +11,7 @@ import DropDownNav from "./DropDownNav";
  * Navigation link configuration
  * @type {Array<{id: number, title: string, targetId: string}>}
  */
-const NAV_LINKS = [
+const NAV_LINKS: Array<{ id: number; title: string; targetId: string }> = [
   { id: 1, title: "Website Design", targetId: "website-design" },
   { id: 2, title: "Graphic Design", targetId: "graphic-design" },
   { id: 3, title: "Shopify Stores", targetId: "shopify-stores" },
