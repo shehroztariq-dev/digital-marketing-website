@@ -72,7 +72,7 @@ export default function Navbar() {
   useEffect(() => {
     if (isHomePage && window.location.hash) {
       const hash = window.location.hash.substring(1);
-      setTimeout(() => scrollToSection(hash), 100);
+      setTimeout(() => scrollToSection(hash));
     }
   }, [isHomePage]);
 
