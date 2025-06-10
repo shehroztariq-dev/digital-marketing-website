@@ -10,8 +10,7 @@ import WebsiteDesign from "@/components/homepage-components/WebsiteDesign";
 
 export default function Home() {
   return (
-    <div className="w-full pt-10 md:items-center md:justify-center bg-black/[0.95] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <Spotlight className="left-80 over" fill="white" />
+    <div className="">
       <Hero />
       <SliderMain />
       <WebsiteDesign />
