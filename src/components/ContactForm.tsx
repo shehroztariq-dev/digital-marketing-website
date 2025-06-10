@@ -104,9 +104,9 @@ export function ContactForm() {
             Thank you for contacting us
           </h3>
           <p className="text-gray-600">
-            We've received your inquiry and will respond to you via email within
-            24 hours. For urgent matters, please call our support line at (123)
-            456-7890.
+            We&apos;ve received your inquiry and will respond to you via email
+            within 24 hours. For urgent matters, please call our support line at
+            (123) 456-7890.
           </p>
         </div>
       </div>
@@ -123,7 +123,7 @@ export function ContactForm() {
             Contact Our Team
           </h2>
           <p className="text-gray-600">
-            Fill out the form below and we'll get back to you as soon as
+            Fill out the form below and we&apos;ll get back to you as soon as
             possible.
           </p>
         </div>

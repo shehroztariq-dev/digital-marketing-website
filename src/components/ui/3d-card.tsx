@@ -2,13 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useRef,
-  useEffect,
-} from "react";
+import { createContext, useState, useContext, useRef, useEffect } from "react";
 
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
@@ -54,8 +48,7 @@ export const CardContainer = ({
         )}
         style={{
           perspective: "1000px",
-        }}
-      >
+        }}>
         <div
           ref={containerRef}
           onMouseEnter={handleMouseEnter}
@@ -67,8 +60,7 @@ export const CardContainer = ({
           )}
           style={{
             transformStyle: "preserve-3d",
-          }}
-        >
+          }}>
           {children}
         </div>
       </div>
@@ -88,8 +80,7 @@ export const CardBody = ({
       className={cn(
         "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
         className
-      )}
-    >
+      )}>
       {children}
     </div>
   );
@@ -138,8 +129,7 @@ export const CardItem = ({
     <Tag
       ref={ref}
       className={cn("w-fit transition duration-200 ease-linear", className)}
-      {...rest}
-    >
+      {...rest}>
       {children}
     </Tag>
   );
