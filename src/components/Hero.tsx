@@ -14,7 +14,7 @@ export default function Hero() {
         who are excited to help you grow your business.
       </p>
       <Link
-        href="/contact"
+        href="/book"
         className="shadow-[inset_0_0_0_2px_#616467] text-white/65 px-12 py-4 mt-10 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200">
         Book a call
       </Link>
