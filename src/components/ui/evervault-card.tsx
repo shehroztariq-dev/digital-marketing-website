@@ -4,13 +4,18 @@ import React, { useState, useEffect } from "react";
 import { useMotionTemplate, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export const EvervaultCard = ({
-  text,
-  className,
-}: {
+interface EvervaultCardProps {
   text?: string;
   className?: string;
-}) => {
+}
+
+interface CardPatternProps {
+  mouseX: any;
+  mouseY: any;
+  randomString: string;
+}
+
+export const EvervaultCard = ({ text, className }: EvervaultCardProps) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -55,7 +60,11 @@ export const EvervaultCard = ({
   );
 };
 
-export function CardPattern({ mouseX, mouseY, randomString }: any) {
+export function CardPattern({
+  mouseX,
+  mouseY,
+  randomString,
+}: CardPatternProps) {
   const maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
   const style = { maskImage, WebkitMaskImage: maskImage };
 
@@ -81,7 +90,7 @@ const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 export const generateRandomString = (length: number) => {
   let result = "";
-  for (const i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return result;
