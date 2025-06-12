@@ -87,7 +87,7 @@ export function ContactForm() {
 
       setSubmitted(true);
     } catch (error) {
-      toast.error("Submission failed. Please try again.");
+      toast.error(`Submission failed. due to ${error} Please try again.`);
     } finally {
       setLoading(false);
     }
